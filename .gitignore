@@ -2,6 +2,6 @@ _site/
 .sass-cache/
 .jekyll-metadata
 .bundle
-/.github/actions/hello-world/node_modules/
 /.idea/
-/.github/actions/hello-world/package-lock.json
+/.github/actions/hello-user/package-lock.json
+/.github/actions/hello-user/node_modules/

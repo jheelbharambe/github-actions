@@ -1,5 +1,5 @@
 try {
-  console.log(`Hello Jheel`);
+  console.log(`Hello World`);
 } catch (error) {
   console.log(error.message);
 }

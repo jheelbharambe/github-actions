@@ -10,15 +10,3 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
-  hello_world_job:
-    runs-on: ubuntu-latest
-    name: A job to say hello
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-      - name: Hello world action step
-        id: hello
-        uses: ./.github/actions/hello-world
-      # Use the output from the `hello` step
-      - name: Give the output
-        run: echo "Action ran successfully"
