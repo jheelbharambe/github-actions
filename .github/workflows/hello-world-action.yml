@@ -1,0 +1,32 @@
+name: hello-world-actions
+on: [ push ]
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Hello world action step
+        id: hello
+        uses: ./.github/actions/hello-world
+      # Use the output from the `hello` step
+      - name: Give the output
+        run: echo "Action ran successfully"
+  hello_user_job:
+    runs-on: ubuntu-latest
+    name: Say hello to given user and record time
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: install npm
+        run: npm install
+        working-directory: ./.github/actions/hello-user
+      - name: Hello user
+        id: hello
+        uses: ./.github/actions/hello-user
+        with:
+          who-to-greet: 'Jheel'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
