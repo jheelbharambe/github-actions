@@ -4,3 +4,4 @@ _site/
 .bundle
 /.github/actions/hello-world/node_modules/
 /.idea/
+/.github/actions/hello-world/package-lock.json
