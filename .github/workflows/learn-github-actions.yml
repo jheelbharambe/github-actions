@@ -14,10 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-      - uses: actions/checkout@v2
-      - uses: ./.github/actions/hello-world
+      - name: checkout
+        uses: actions/checkout@v2
       - name: Hello world action step
         id: hello
+        uses: ./.github/actions/hello-world
         with:
           who-to-greet: 'Jheel'
       # Use the output from the `hello` step
