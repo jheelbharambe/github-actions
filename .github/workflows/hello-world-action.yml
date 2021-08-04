@@ -1,4 +1,4 @@
-name: learn-github-actions
+name: hello-world-actions
 on: [ push ]
 jobs:
   hello_world_job:
