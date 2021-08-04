@@ -16,13 +16,9 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: installing npm
-        run: npm install
       - name: Hello world action step
         id: hello
         uses: ./.github/actions/hello-world
-        with:
-          who-to-greet: 'Jheel'
       # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: Give the output
+        run: echo "Action ran successfully"
