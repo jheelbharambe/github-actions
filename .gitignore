@@ -2,3 +2,5 @@ _site/
 .sass-cache/
 .jekyll-metadata
 .bundle
+/.github/actions/hello-world/node_modules/
+/.idea/
