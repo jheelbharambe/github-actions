@@ -1,19 +1,20 @@
 name: testing-actions-from-outside-this-repository
 description: Testing actions from outside this repository
-runs: 
-  using: "composite"
-  shell: bash
-  steps:
-    - name: checkout
-      uses: actions/checkout@v2
-    - name: install npm
-      run: npm install
-      working-directory: ./.github/actions/hello-user
-    - name: Hello user
-      id: hello-user
-      uses: ./.github/actions/hello-user
-      with:
-        who-to-greet: 'Jheel'
+jobs: 
+  hello_user_job:
+    runs-on: ubuntu-latest
+    name: Say hello to given user and record time
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: install npm
+        run: npm install
+        working-directory: ./.github/actions/hello-user
+      - name: Hello user
+        id: hello
+        uses: ./.github/actions/hello-user
+        with:
+          who-to-greet: 'Jheel'
       # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
