@@ -1,0 +1,12 @@
+name: test-own-action
+on: [ push ]
+jobs:
+  testing-own-action:
+    runs-on: ubuntu-latest
+    name: A job to test own action
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Test own action
+        id: test
+        uses: ./
