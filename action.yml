@@ -3,6 +3,7 @@ description: Testing actions from outside this repository
 runs: 
   using: "composite"
   steps:
+    shell: bash
     - name: checkout
       uses: actions/checkout@v2
     - name: install npm
