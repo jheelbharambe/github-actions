@@ -15,6 +15,3 @@ jobs:
         uses: ./.github/actions/hello-user
         with:
           who-to-greet: 'Jheel'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
