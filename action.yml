@@ -1,7 +1,7 @@
 name: testing-actions-from-outside-this-repository
 description: Testing actions from outside this repository
 runs: 
-  runs-on: "ubuntu-latest"
+  using: "composite"
   steps:
-    - name: echo Hello Jheel
-      run: echo Hello Jheel
+    - run: echo Hello Jheel
+      shell: bash
