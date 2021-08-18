@@ -1,5 +1,6 @@
 name: test-own-action
-on: [ push ]
+on: 
+  workflow_dispatch:
 jobs:
   testing-own-action:
     runs-on: ubuntu-latest
