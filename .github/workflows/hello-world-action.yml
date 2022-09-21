@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+      - name: 🔎 Check IP
+        run: curl https://api.ipify.org
       - name: install npm
         run: npm install
         working-directory: ./.github/actions/hello-user
